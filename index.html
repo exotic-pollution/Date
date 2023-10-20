@@ -7,7 +7,7 @@
     <title>Date Question</title>
     <style>
         body {
-            background-color: #add8e6; /* Light Blue */
+            background: linear-gradient(to right, #8a2be2, #add8e6); /* Gradient from purple to light blue */
         }
     </style>
 </head>
@@ -28,6 +28,7 @@
     </form>
 
     <div id="message" style="display: none;">
+        <p id="userChoice"></p>
         <p>It's a date then! 🌟</p>
     </div>
 
@@ -36,6 +37,8 @@
             var selectedOption = document.querySelector('input[name="choice"]:checked');
             if (selectedOption) {
                 var messageDiv = document.getElementById('message');
+                var userChoice = document.getElementById('userChoice');
+                userChoice.textContent = 'You chose: ' + selectedOption.value.toUpperCase();
                 messageDiv.style.display = 'block';
             }
         }
